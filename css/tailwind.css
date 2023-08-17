@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'ChosunGu';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ChosunGu.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+*{font-family: 'ChosunGu';}
+
+.dark body,
+.dark .nav{
+    animation: infinite 9s background alternate-reverse;
+    color: #ebf4f1;
+}
+/* 다크 모드 눌렀을때 배경색 바뀌고 상단 글자색 바뀜 */
+.m-btn.on > div:nth-child(1){transform: rotate(45deg) translateY(14px);}
+.m-btn.on > div:nth-child(2){transform: rotate(-30deg); opacity: 0;}
+.m-btn.on > div:nth-child(3){transform: rotate(-45deg) translateY(-14px);}
+
+.m-btn.on + div{right: 0;}
+/* 형제 선택자 */
+
+@keyframes background{
+    0%{background-color: #091a28;}
+    50%{background-color: #08131b;}
+    100%{background-color: #030507;}
+}
+/* 배경색이 서서히 바뀜 */
+
+.list li::after{
+    content: ""; position: absolute; width: 100%; height: 1px; background-color: black; bottom: 0; left: 0; transition: 1s;
+    transform: scaleX(0);
+}
+.dark .list li::after{background-color: #ebf4f1;}
+.list li.on::after,
+.list li:hover::after{transform: scaleX(1);}
+.list li.on,
+.list li:hover{font-weight: bold;}
+/* fwb활성화되는것을 확인하기위해 글자 진하게 추가 */
+/* 메뉴 밑에 밑줄만들기/on,hover 추가시 메뉴각각 호버할때마다 중간에서 밑줄생김 */
