@@ -140,7 +140,7 @@ $cateList.forEach((e,i)=>{
         $container.innerHTML = ''; //비운다
     })
 })
-axios.get("../data/data.json")
+axios.get("data/data.json")
 .then(function(res){
     PortfolioData(res.data.Portfolio)
 })
