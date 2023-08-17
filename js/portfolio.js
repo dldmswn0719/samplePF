@@ -123,7 +123,7 @@ $cateList.forEach((e,i)=>{
 
         $cateList[i].classList.add("on") //각각 눌렀을때 활성화
 
-        axios.get("../data/data.json")
+        axios.get("data/data.json")
         .then(function(res){
             console.log(res)
             let PortData;
