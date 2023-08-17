@@ -33,7 +33,7 @@ const lang = url.get("Lang")
 // console.log(lang)
 //한국어,영어 누르면 console창에 en,kr각각 뜬다.
 
-axios.get("data.json")
+axios.get("data/data.json")
 .then(function(res){
     // console.log(res)
     if($lang == "en"){
